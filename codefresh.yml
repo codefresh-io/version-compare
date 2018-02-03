@@ -7,3 +7,9 @@ steps:
     dockerfile: Dockerfile
     image-name: codefresh/version-compare
     tag: ${{CF_BRANCH}}
+
+  push_to_registry_revision:
+    title: "Pushing image tagged with revision to registry"
+    type: push
+    candidate: ${{build_step}}
+    tag: ${{CF_BRANCH}}
